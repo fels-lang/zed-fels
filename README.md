@@ -11,15 +11,28 @@ programming language in the [Zed](https://zed.dev) editor.
 
 ## Install as a dev extension
 
-You need Zed, Rust (installed with rustup, with the `wasm32-wasip1` target) and the Gabbro compiler
-(0.2.1 or newer, `gabbro` on your PATH).
+You need Zed and Rust (installed with rustup, with the `wasm32-wasip1` target).
 
 1. Open Zed, then the command palette, then `zed: install dev extension`.
 2. Choose this folder.
 3. Open a `.gab` file. Zed builds the extension and the grammar the first time.
 
-If `gabbro` is not on the PATH, set its location in the Zed settings. Zed then ignores the arguments
-of the extension, so `arguments` must be given too:
+## Where the language server comes from
+
+The language server is `gabbro lsp`, a command of the Gabbro compiler. It needs the standard library
+that sits next to the compiler, so the whole compiler is used. The extension looks for it in this order:
+
+1. The path in the Zed settings (see below).
+2. `gabbro` on the PATH.
+3. Otherwise the extension downloads the newest release from
+   [gabbro-lang/gabbro](https://github.com/gabbro-lang/gabbro/releases) (about 52 MB, 64 bit Windows) into its
+   own folder, shows "Downloading" in Zed, and removes older copies. If GitHub cannot be reached, a copy
+   from an earlier run is used.
+
+Use Gabbro 0.2.2 or newer. Older versions analyze each file alone and report errors on every import.
+
+To use a compiler of your own, set its location in the Zed settings. Zed then ignores the arguments of
+the extension, so `arguments` must be given too:
 
 ```json
 {

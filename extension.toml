@@ -1,7 +1,7 @@
 id = "gabbro"
 name = "Gabbro"
 description = "Syntax highlighting and the language server for the Gabbro programming language."
-version = "0.1.0"
+version = "0.2.0"
 schema_version = 1
 authors = ["Christian Brendlin"]
 repository = "https://github.com/gabbro-lang/zed-gabbro"
