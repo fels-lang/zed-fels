@@ -18,13 +18,17 @@ You need Zed, Rust (installed with rustup, with the `wasm32-wasip1` target) and 
 2. Choose this folder.
 3. Open a `.gab` file. Zed builds the extension and the grammar the first time.
 
-If `gabbro` is not on the PATH, set its location in the Zed settings:
+If `gabbro` is not on the PATH, set its location in the Zed settings. Zed then ignores the arguments
+of the extension, so `arguments` must be given too:
 
 ```json
 {
   "lsp": {
     "gabbro": {
-      "binary": { "path": "C:/path/to/gabbro.exe" }
+      "binary": {
+        "path": "C:/path/to/gabbro.exe",
+        "arguments": ["lsp"]
+      }
     }
   }
 }
