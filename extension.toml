@@ -1,15 +1,15 @@
-id = "gabbro"
-name = "Gabbro"
-description = "Syntax highlighting and the language server for the Gabbro programming language."
-version = "0.2.0"
+id = "fels"
+name = "Fels"
+description = "Syntax highlighting and the language server for the Fels programming language."
+version = "0.3.0"
 schema_version = 1
 authors = ["Christian Brendlin"]
-repository = "https://github.com/gabbro-lang/zed-gabbro"
+repository = "https://github.com/fels-lang/zed-fels"
 
-[language_servers.gabbro]
-name = "Gabbro Language Server"
-languages = ["Gabbro"]
+[language_servers.fels]
+name = "Fels Language Server"
+languages = ["Fels"]
 
-[grammars.gabbro]
-repository = "https://github.com/gabbro-lang/tree-sitter-gabbro"
-commit = "b6a96ff8ffbb56f3f0ba5de09de27edcd5902e98"
+[grammars.fels]
+repository = "https://github.com/fels-lang/tree-sitter-fels"
+commit = "b5a68816e7a02759330c3e185642d829d3fb580c"

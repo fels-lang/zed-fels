@@ -752,8 +752,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "zed-gabbro"
-version = "0.2.0"
+name = "zed-fels"
+version = "0.3.0"
 dependencies = [
  "zed_extension_api",
 ]

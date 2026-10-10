@@ -1,9 +1,9 @@
 [package]
-name = "zed-gabbro"
-version = "0.2.0"
+name = "zed-fels"
+version = "0.3.0"
 edition = "2021"
 license = "Apache-2.0"
-description = "Zed extension for the Gabbro programming language"
+description = "Zed extension for the Fels programming language"
 
 [lib]
 path = "src/lib.rs"
