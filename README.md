@@ -1,0 +1,42 @@
+# Gabbro for Zed
+
+Syntax highlighting and language server support for the [Gabbro](https://github.com/gabbro-lang/gabbro)
+programming language in the [Zed](https://zed.dev) editor.
+
+- **Highlighting, outline, brackets and indentation** come from the tree-sitter grammar
+  [tree-sitter-gabbro](https://github.com/gabbro-lang/tree-sitter-gabbro).
+- **Errors, completion, hover and go to definition** come from `gabbro lsp`, the language server that is
+  part of the Gabbro compiler. It understands `#import`, so it knows your other files and the standard
+  library.
+
+## Install as a dev extension
+
+You need Zed, Rust (installed with rustup, with the `wasm32-wasip1` target) and the Gabbro compiler
+(0.2.1 or newer, `gabbro` on your PATH).
+
+1. Open Zed, then the command palette, then `zed: install dev extension`.
+2. Choose this folder.
+3. Open a `.gab` file. Zed builds the extension and the grammar the first time.
+
+If `gabbro` is not on the PATH, set its location in the Zed settings:
+
+```json
+{
+  "lsp": {
+    "gabbro": {
+      "binary": { "path": "C:/path/to/gabbro.exe" }
+    }
+  }
+}
+```
+
+## Notes
+
+- `extension.toml` names the grammar repository and the exact commit that is used. When the grammar
+  changes, update the commit and copy the query files again.
+- The query files in `languages/gabbro/` are copies of the ones in the grammar repository. Zed reads
+  them from the extension, not from the grammar.
+
+## License
+
+Apache-2.0. See [LICENSE](LICENSE).
